@@ -8,7 +8,8 @@ import random
 
 import statistics as st
 
-from Bio import pairwise2
+from Bio.Align import PairwiseAligner
+# from Bio import pairwise2
 from joblib import Parallel, delayed
 
 # Define the CRISPR class
@@ -33,7 +34,7 @@ class CRISPR(object):
     def getConsensus(self):
         self.cons = max(set(self.repeats), key = self.repeats.count) 
     def identity(self, i, j, sqlst):
-        align = pairwise2.align.globalxx(sqlst[i], sqlst[j])
+        align = PairwiseAligner.align.globalxx(sqlst[i], sqlst[j])
         return(align[0][2]/align[0][4]*100)
     def identLoop(self, seqs, threads):
         if self.exact:
