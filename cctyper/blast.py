@@ -7,12 +7,13 @@ import math
 import random
 
 import pandas as pd
-import statistics as st
+# import statistics as st
 
-from Bio import pairwise2
-from Bio import SeqIO
-from Bio.Seq import Seq
-from joblib import Parallel, delayed
+# from Bio.Align import PairwiseAligner
+# from Bio import pairwise2
+# from Bio import SeqIO
+# from Bio.Seq import Seq
+# from joblib import Parallel, delayed
 
 from cctyper.minced import CRISPR
 
